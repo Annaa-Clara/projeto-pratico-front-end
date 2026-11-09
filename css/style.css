@@ -176,6 +176,30 @@ video {
   background-color: #fffbeb;
 }
 
+.btn-filtro {
+  background-color: #fff;
+  border: 1px solid #9ca3af;
+  color: #374151;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-filtro:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-filtro[aria-pressed="true"] {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.btn-filtro:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
