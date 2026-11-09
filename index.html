@@ -24,9 +24,20 @@
   <main>
     <section id="catalogo">
       <h2>Catálogo</h2>
+
+      <!-- Componente gerado com IA (aula 13) e adaptado para HTML/CSS/JS puros -->
+      <div class="filtro-tipo d-flex gap-2 flex-wrap mb-3" role="group" aria-label="Filtrar catálogo por tipo">
+        <button type="button" class="btn-filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="btn-filtro" data-filtro="filme" aria-pressed="false">Filmes</button>
+        <button type="button" class="btn-filtro" data-filtro="serie" aria-pressed="false">Séries</button>
+      </div>
+
+      <!-- Anuncia o resultado do filtro para leitores de tela -->
+      <p id="filtro-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
       <div class="row g-3 grade-filmes">
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card-filme h-100" data-id="interestelar">
+          <article class="card-filme h-100" data-id="interestelar" data-tipo="filme">
             <h3>Interestelar</h3>
             <p class="info">Filme · Ficção científica · 2014</p>
             <p>Exploradores viajam por um buraco de minhoca em busca de um novo lar para a humanidade.</p>
@@ -38,7 +49,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card-filme h-100" data-id="breaking-bad">
+          <article class="card-filme h-100" data-id="breaking-bad" data-tipo="serie">
             <h3>Breaking Bad</h3>
             <p class="info">Série · Drama · 2008</p>
             <p>Um professor de química muda de vida após um diagnóstico difícil.</p>
@@ -50,7 +61,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card-filme h-100" data-id="divertida-mente">
+          <article class="card-filme h-100" data-id="divertida-mente" data-tipo="filme">
             <h3>Divertida Mente</h3>
             <p class="info">Filme · Animação · 2015</p>
             <p>As emoções de uma garota tentam guiá-la em uma mudança de cidade.</p>
@@ -62,7 +73,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card-filme h-100" data-id="dark">
+          <article class="card-filme h-100" data-id="dark" data-tipo="serie">
             <h3>Dark</h3>
             <p class="info">Série · Suspense · 2017</p>
             <p>O desaparecimento de crianças revela segredos entre quatro famílias.</p>
