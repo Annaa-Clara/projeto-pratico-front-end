@@ -20,3 +20,6 @@ _Link será adicionado na aula 15._
 
 ## Avaliações em Pares
 _Serão adicionadas ao longo do semestre._
+
+## Créditos
+- Vídeo: "Crowded theater with massive green screen" via [Vecteezy](https://www.vecteezy.com)
