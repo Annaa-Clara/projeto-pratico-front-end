@@ -133,6 +133,32 @@ video {
   border-radius: 8px;
 }
 
+.grafico {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.grafico .eixo {
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+.grafico .barra {
+  fill: #2563eb;
+}
+
+.grafico .barra:hover {
+  fill: #1d4ed8;
+}
+
+.grafico .valor,
+.grafico .rotulo {
+  font-size: 11px;
+  text-anchor: middle;
+  fill: #222;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
