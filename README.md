@@ -16,7 +16,7 @@ Projeto prático da disciplina **Desenvolvimento Front-end para Web**, construí
 Anna Clara de Medeiros Gonçalves
 
 ## Site publicado
-_Link será adicionado na aula 15._
+https://annaa-clara.github.io/projeto-pratico-front-end/
 
 ## Avaliações em Pares
 _Serão adicionadas ao longo do semestre._
