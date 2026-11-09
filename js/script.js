@@ -109,4 +109,32 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("modal-titulo").textContent = botaoQueAbriu.dataset.titulo;
     document.getElementById("modal-texto").textContent = botaoQueAbriu.dataset.detalhes;
   });
+  // ===== Filtro por tipo (componente gerado com IA, aula 13) =====
+  const filtroTipo = document.querySelector(".filtro-tipo");
+  const statusFiltro = document.getElementById("filtro-status");
+
+  filtroTipo.addEventListener("click", (evento) => {
+    const botaoFiltro = evento.target.closest(".btn-filtro");
+    if (!botaoFiltro) {
+      return;
+    }
+
+    const tipoEscolhido = botaoFiltro.dataset.filtro;
+
+    filtroTipo.querySelectorAll(".btn-filtro").forEach((botao) => {
+      botao.setAttribute("aria-pressed", String(botao === botaoFiltro));
+    });
+
+    let quantidadeVisivel = 0;
+    gradeFilmes.querySelectorAll(".card-filme").forEach((card) => {
+      const coluna = card.parentElement;
+      const deveAparecer = tipoEscolhido === "todos" || card.dataset.tipo === tipoEscolhido;
+      coluna.hidden = !deveAparecer;
+      if (deveAparecer) {
+        quantidadeVisivel++;
+      }
+    });
+
+    statusFiltro.textContent = `${quantidadeVisivel} ${quantidadeVisivel === 1 ? "título exibido" : "títulos exibidos"}.`;
+  });
 });
