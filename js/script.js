@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+  // ===== Média das notas (aula 10) =====
   const titulos = [
     { nome: "Interestelar", nota: 9 },
     { nome: "Breaking Bad", nota: 9.5 },
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const campoMedia = document.getElementById("media-notas");
   campoMedia.textContent = calcularMedia(titulos).toFixed(1).replace(".", ",");
 
+  // ===== Leitura e gravação no localStorage =====
   function lerDoStorage(chave) {
     try {
       const valorSalvo = localStorage.getItem(chave);
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem(chave, JSON.stringify(valor));
   }
 
+  // ===== Favoritos (event delegation) =====
   const CHAVE_FAVORITOS = "cinelista-favoritos";
   const gradeFilmes = document.querySelector(".grade-filmes");
   let idsFavoritos = lerDoStorage(CHAVE_FAVORITOS);
@@ -47,8 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     card.classList.toggle("favorito", ehFavorito);
   }
 
+  // Restaura o estado salvo ao carregar a página
   gradeFilmes.querySelectorAll(".card-filme").forEach(atualizarBotaoFavorito);
 
+  // UM único ouvinte no elemento pai, em vez de um por card
   gradeFilmes.addEventListener("click", (evento) => {
     const botaoClicado = evento.target.closest(".btn-favorito");
     if (!botaoClicado) {
@@ -68,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarBotaoFavorito(card);
   });
 
+  // ===== Sugestões do formulário =====
   const CHAVE_SUGESTOES = "cinelista-sugestoes";
   const formulario = document.querySelector("#contato form");
   const listaSugestoes = document.getElementById("lista-sugestoes");
@@ -75,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function exibirSugestao(sugestao) {
     const item = document.createElement("li");
-    
+    // textContent: o texto digitado pelo usuário nunca é interpretado como HTML
     item.textContent = `${sugestao.titulo} (sugerido por ${sugestao.nome})`;
     listaSugestoes.appendChild(item);
   }
@@ -94,5 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
     salvarNoStorage(CHAVE_SUGESTOES, sugestoes);
     exibirSugestao(novaSugestao);
     formulario.reset();
+  });
+
+  // ===== Modal de detalhes (Bootstrap) =====
+  const modalDetalhes = document.getElementById("modal-detalhes");
+
+  modalDetalhes.addEventListener("show.bs.modal", (evento) => {
+    const botaoQueAbriu = evento.relatedTarget;
+    document.getElementById("modal-titulo").textContent = botaoQueAbriu.dataset.titulo;
+    document.getElementById("modal-texto").textContent = botaoQueAbriu.dataset.detalhes;
   });
 });

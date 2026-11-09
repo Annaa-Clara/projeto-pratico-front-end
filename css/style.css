@@ -106,12 +106,6 @@ footer {
   background-color: #f3f4f6;
 }
 
-.grade-filmes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
 .card-filme {
   border: 1px solid #d1d5db;
   border-radius: 8px;
