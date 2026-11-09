@@ -215,3 +215,29 @@ video {
     padding: 1rem;
   }
 }
+
+/* Acessibilidade (correção 5): alguns elementos interativos (botões do Bootstrap,
+   botão de fechar do modal e controles do vídeo) tinham foco pouco perceptível ou
+   dependente do estilo padrão do navegador. Definido um contorno de foco único e
+   bem visível para todos os elementos interativos. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+video:focus-visible,
+.btn:focus-visible,
+.btn-close:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Estilo do link "Pular para o conteúdo" quando recebe foco */
+.link-pular:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background-color: #fbbf24;
+  color: #111;
+  font-weight: bold;
+}
