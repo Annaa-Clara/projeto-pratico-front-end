@@ -159,6 +159,29 @@ video {
   fill: #222;
 }
 
+.btn-favorito {
+  background-color: transparent;
+  border: 1px solid #fbbf24;
+  color: #92400e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-favorito:hover {
+  background-color: #fef3c7;
+}
+
+.btn-favorito:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.card-filme.favorito {
+  border-color: #fbbf24;
+  background-color: #fffbeb;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
