@@ -3,30 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projeto Prático Front-end</title>
+  <title>CineLista - Catálogo de Filmes e Séries</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Projeto Prático Front-end</h1>
+    <h1>CineLista</h1>
     <nav>
+      <a href="#catalogo">Catálogo</a>
       <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
+      <a href="#contato">Sugestões</a>
     </nav>
   </header>
 
   <main>
+    <section id="catalogo">
+      <h2>Catálogo</h2>
+      <div class="grade-filmes">
+        <article class="card-filme">
+          <h3>Interestelar</h3>
+          <p class="info">Filme · Ficção científica · 2014</p>
+          <p>Exploradores viajam por um buraco de minhoca em busca de um novo lar para a humanidade.</p>
+        </article>
+
+        <article class="card-filme">
+          <h3>Breaking Bad</h3>
+          <p class="info">Série · Drama · 2008</p>
+          <p>Um professor de química muda de vida após um diagnóstico difícil.</p>
+        </article>
+
+        <article class="card-filme">
+          <h3>Divertida Mente</h3>
+          <p class="info">Filme · Animação · 2015</p>
+          <p>As emoções de uma garota tentam guiá-la em uma mudança de cidade.</p>
+        </article>
+
+        <article class="card-filme">
+          <h3>Dark</h3>
+          <p class="info">Série · Suspense · 2017</p>
+          <p>O desaparecimento de crianças revela segredos entre quatro famílias.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="sobre">
       <h2>Sobre</h2>
-      <article>
-        <h3>Apresentação</h3>
-        <p>Conteúdo provisório até a definição do tema.</p>
-      </article>
+      <p>O CineLista reúne filmes e séries para você avaliar, favoritar e acompanhar.</p>
     </section>
 
     <section id="contato">
-      <h2>Contato</h2>
+      <h2>Sugira um título</h2>
       <form>
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" required>
@@ -34,15 +61,19 @@
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required>
 
+        <label for="titulo">Título sugerido</label>
+        <input type="text" id="titulo" name="titulo" required>
+
         <div class="botoes">
-  <button type="submit" class="btn-primario">Enviar</button>
-  <button type="reset" class="btn-secundario">Limpar</button>
-</div>
+          <button type="submit" class="btn-primario">Enviar</button>
+          <button type="reset" class="btn-secundario">Limpar</button>
+        </div>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>Anna Clara de Medeiros Gonçalves</p>
+    <p>CineLista · Anna Clara de Medeiros Gonçalves</p>
   </footer>
 </body>
+</html>
